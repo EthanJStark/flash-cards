@@ -1,49 +1,49 @@
-# An app that helps you study...
+# Flash Card App
 
-I would like to create a flash card app/ study tool app like this one https://www.studyblue.com
- You can create digital flashcards and use them to study and subject of your choice.
+## Install Instructions
+Setup database
+npm start
+localhost: 3000
 
-
-# Context
-
-Creating this web application will provide exposure to:
-* Express (or other web framework)
-* Javascript
-* Simple relational database interactions (Create, Read, Update, Delete), with SQL practice
-* Simple server side templating (to render data retrieved from the database)
-* work with CSS animations 
-
+Creating this web application provided us exposure to:
+* Express
+* Javascript (ES6)
+* Simple relational database interactions (Create, Read, Update, Delete), with postgreSQL practice
+* Simple server side templating (Pug: to render data retrieved from the database)
+* Work with CSS animations
 
 # Specifications
 
-- [ ] User can create "flashcards" and organize them into different categories.
-- [ ] Each flash card has a "front" and "back" so user can test their knowledge.
-- [ ] CRUD on all flash cards.
-- [ ] User can test themselves with flashcards (possibly use CSS animations to do this) and record their progress. (see https://www.studyblue.com for example)
-
+- [ ] User can create decks of flashcards
+- [ ] User can view all decks
+- [ ] User can select a deck for quizzing
+- [ ] User can select a deck for editing
+- [ ] User can edit the deck name
+- [ ] User can add cards to a deck
+- [ ] User can delete cards
+- [ ] User can delete decks
+- [ ] User can edit cards
+- [ ] User can view previous card with click or keyboard, if it exists
+- [ ] User can view next with click or keyboard, if it exists
+- [ ] User can finish the quiz at anytime
+- [ ] User presented with summary when finishing quiz
+- [ ] User can view back of card with click or keyboard
 
 # Required
 
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
+- [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 # Quality Rubric
 
 - Interface is user friendly
 - User can easily organize flashcards
-- Code is well formatted without any linting errors
+- Code is well formatted
 - Variables, functions, css classes, etc. are meaningfully named (no comments exist in code to explain functionality - the names serve that function)
 - Functions are small and serve a single purpose
-- Code is well organized into a meaningful file structure
-
-
-
-
+- Code is well organized into a meaningful file structure for other coders to contribute
 
 ---
 
 <!-- LICENSE -->
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 [mit-license]: https://opensource.org/licenses/MIT
