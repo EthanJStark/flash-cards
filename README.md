@@ -1,9 +1,9 @@
 # Flash Card App
 
 ## Install Instructions
-Setup database
-npm start
-localhost: 3000
+- Setup database
+- npm start
+- localhost: 3000
 
 Creating this web application provided us exposure to:
 * Express
