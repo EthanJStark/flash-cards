@@ -4,8 +4,15 @@ const db = pgp( connection )
 
 const getAllDecks = 'SELECT * FROM decks'
 
+const deleteDeck = 'DELETE FROM decks where id=$1'
+const deleteDeckCards = 'DELETE FROM cards WHERE deck_id=$1'
+
 const Decks = {
-  all: () => db.any( getAllDecks )
+  all: () => db.any( getAllDecks ),
+  delete: id => Promise.all([
+    db.any( deleteDeck, [id] ),
+    db.any( deleteDeckCards, [id] )
+  ])
 }
 
 module.exports = {
