@@ -1,6 +1,21 @@
 extends ../layout
 
 block content
-  ul
-    each deck in decks
-      li= deck.title
+  each deck, index in decks
+    if( index % 3 === 0 && index !== 0 )
+      .row
+
+    .col-md-4
+      .panel.panel-default.deck(data-id=deck.id)
+        .panel-heading
+          h3.panel-title= deck.title
+        .panel-body
+          | 3 cards
+        .panel-footer
+          .edit
+            .toggle-wrapper
+              a(href=`/decks/${deck.id}.edit`) Edit
+                i.glyphicon.glyphicon-pencil
+
+    if( index % 3 === 0 && index !== 0 )
+      .row
