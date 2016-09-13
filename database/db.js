@@ -8,7 +8,7 @@ const newDeck = 'INSERT INTO decks (title) VALUES ($1)'
 
 const Decks = {
   all: () => db.any( getAllDecks ),
-  new: ( title ) => db.one( newDeck, [title] )
+  new: title => db.one( newDeck, [title] )
 }
 
 module.exports = {

@@ -15,7 +15,6 @@ router.get('/decks/new', ( request, response, next ) => {
 
 router.post('/decks/new', ( request, response, next ) => {
   const title = request.body.title
-  console.log('title', request.body.title);
   Decks.new( title )
     .then( response.render('decks/new') )
 })
