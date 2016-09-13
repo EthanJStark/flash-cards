@@ -4,7 +4,6 @@ block content
   ul
     each deck in decks
       li= deck.title
-
       form(method='post', action='/decks/delete/')
         input(type='hidden', name='id', value=`${deck.id}`)
-        button(type='submit')
+        button(type='submit') DELETE

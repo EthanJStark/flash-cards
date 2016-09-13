@@ -10,11 +10,13 @@ const deleteDeckCards = 'DELETE FROM cards WHERE deck_id=$1'
 const Decks = {
   all: () => db.any( getAllDecks ),
   delete: id => Promise.all([
-    db.any( deleteDeck, [id] ),
-    db.any( deleteDeckCards, [id] )
+    db.any( deleteDeck, [id] )
   ])
 }
 
 module.exports = {
   Decks
 }
+
+// 
+// db.any( deleteDeckCards, [id] )
