@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h1 edit
+  form(action='/decks/new', method='post')
+    div
+      label(for='title') Title:
+      input#title(type='text', name='title')
+    .button
+      button(type='submit') Create Deck

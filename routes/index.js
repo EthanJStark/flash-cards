@@ -9,8 +9,15 @@ router.get('/', function(req, res, next) {
     .then( decks => res.render('decks/index', { decks } ) )
 })
 
-router.get('/decks/new', (req, res, next ) => {
-  res.render('decks/edit')
+router.get('/decks/new', ( req, res, next ) => {
+  res.render('decks/new')
+})
+
+router.post('/decks/new', ( req, res, next ) => {
+  const title = req.body.title
+  console.log('title', req.body.title);
+  Decks.new( title )
+    .then( res.render('decks/new') )
 })
 
 module.exports = router
