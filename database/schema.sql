@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS decks;
+
+CREATE TABLE decks (
+  id SERIAL PRIMARY KEY,
+  title TEXT
+);
+
+DROP TABLE IF EXISTS cards;
+
+CREATE TABLE cards (
+  id SERIAL PRIMARY KEY,
+  front TEXT,
+  back TEXT,
+  deck_id INTEGER NOT NULL
+);
