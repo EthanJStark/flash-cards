@@ -1,8 +1,6 @@
 extends ../layout
 
 block content
-  h1= header
-  p Welcome to #{header}
   ul
-    each title in decks
-      li= title
+    each deck in decks
+      li= deck.title

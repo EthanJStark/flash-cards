@@ -5,12 +5,8 @@ const Decks = require('../database/db.js').Decks
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const decks = Decks.all
-  console.log("decks.all", decks);
-  res.render('decks/index', { 
-    header: 'Decks',
-    decks: decks
-  })
+  Decks.all()
+    .then( decks => res.render('decks/index', { decks } ) )
 })
 
 module.exports = router
