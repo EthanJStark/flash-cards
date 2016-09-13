@@ -9,4 +9,8 @@ router.get('/', function(req, res, next) {
     .then( decks => res.render('decks/index', { decks } ) )
 })
 
+router.get('/decks/new', (req, res, next ) => {
+  res.render('decks/edit')
+})
+
 module.exports = router
