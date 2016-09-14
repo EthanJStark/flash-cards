@@ -14,7 +14,7 @@ const Deck = {
 }
 
 const Card = {
-  new: (front, back, id) => db.one( newCard, [front, back, id] )
+  new: (front, back, deck_id) => db.one( newCard, [front, back, deck_id] )
 }
 
 module.exports = {
