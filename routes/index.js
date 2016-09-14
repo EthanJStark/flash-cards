@@ -10,7 +10,13 @@ router.get('/', function(request, response, next) {
 })
 
 //render edit / create deck page
-router.get('/decks/edit', ( request, response, next ) => {
+router.get('/decks/new', ( request, response, next ) => {
+  response.render('decks/edit')
+})
+
+//edit page for a specific deck
+router.get('/decks/edit/:id', ( request, response, next ) => {
+  Deck.list( request.params.id )
   response.render('decks/edit')
 })
 

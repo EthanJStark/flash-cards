@@ -10,9 +10,12 @@ const newCard = 'INSERT INTO cards (front, back, deck_id) VALUES ($1, $2, $3)'
 
 const deleteCard = 'DELETE FROM cards WHERE id=$1'
 
+const listAllCardsInDeck = 'SELECT * FROM cards WHERE deck_id=$1'
+
 const Deck = {
   all: () => db.any( getAllDecks ),
-  new: title => db.one( newDeck, [title] )
+  new: title => db.one( newDeck, [title] ),
+  list: id => db.any( listAllCardsInDeck, [id])
 }
 
 const Card = {

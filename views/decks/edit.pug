@@ -8,3 +8,6 @@ block content
       input#title(type='text', name='title')
     .button
       button(type='submit') Create Deck
+  ul
+    for front in cards
+      li= front
