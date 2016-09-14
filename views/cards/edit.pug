@@ -4,7 +4,10 @@ block content
   h1 Edit/New Card
   form(action='/cards/new', method='post')
     div
-      label(for='title') Title:
-      input#title(type='text', name='title')
+      label(for='front') Front:
+      input#title(type='text', name='front')
+    div
+      label(for='back') Back:
+      input#title(type='text', name='back')
     .button
-      button(type='submit') Create Deck
+      button(type='submit') Create Card

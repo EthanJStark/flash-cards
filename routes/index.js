@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../database/db.js')
 const Deck = require('../database/db.js').Deck
+const Card = require('../database/db.js').Card
 
 router.get('/', function(request, response, next) {
   Deck.all()
