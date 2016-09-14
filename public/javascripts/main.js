@@ -46,12 +46,50 @@
 
 	'use strict';
 
-	var deckClicked = function deckClicked(event) {
-	  console.log(event);
+	var findParentId = function findParentId(element) {
+	  var target = element.parentNode;
+	  var id = element.dataset.id;
+
+	  while (id === undefined && target != undefined) {
+	    id = target.dataset.id;
+	    target = target.parentNode;
+	  }
+
+	  return id;
 	};
 
+	var deckClicked = function deckClicked(event) {
+	  var id = findParentId(event.target);
+
+	  window.location = '/deck/' + id;
+	};
+
+	var timer = function () {
+	  var ids = {};
+
+	  return {
+	    timeout: function timeout(id, fn) {
+	      var time = arguments.length <= 2 || arguments[2] === undefined ? 2000 : arguments[2];
+	      return ids[id] = window.setTimeout(fn, time);
+	    },
+	    cancel: function cancel(id) {
+	      return ids[id] !== undefined ? window.clearTimeout(ids[id]) : '';
+	    }
+	  };
+	}();
+
 	var deckMouseover = function deckMouseover(event) {
-	  console.log(event);
+	  var id = findParentId(event.target);
+	  var wrapper = event.target.querySelector('.toggle-wrapper');
+
+	  if (wrapper) {
+	    timer.cancel(id);
+
+	    wrapper.style.display = 'block';
+	    timer.timeout(id, function () {
+	      return wrapper.style.display = 'none';
+	    });
+	  }
 	};
 
 	Array.from(document.getElementsByClassName('deck')).forEach(function (element) {
