@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.deck .edit {
+  height: 17px;
+}
+
+.deck .toggle-wrapper {
+  display: none;
+}
