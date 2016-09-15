@@ -18,8 +18,9 @@ router.get('/edit/:id', ( request, response, next ) => {
 //button for create a new deck. Need to insert dummy title
 router.post('/new', ( request, response, next ) => {
   const title = request.body.title
+  const deck_id = 1
   Deck.create( title )
-    .then( x => response.render('decks/edit') )
+    .then( response.redirect( `/decks/edit/${deck_id}` ) )
 })
 
 module.exports = router

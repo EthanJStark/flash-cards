@@ -15,7 +15,7 @@ router.post('/new', ( request, response, next ) => {
   const deck_id = 1
 
   Card.create( front, back, deck_id )
-    .then( deck => response.render( 'decks/edit', deck ) ) //should go back to specific deck
+    .then( response.redirect( `/decks/edit/${deck_id}` ) ) //should go back to specific deck
 })
 
 module.exports = router
