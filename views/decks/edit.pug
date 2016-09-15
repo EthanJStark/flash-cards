@@ -9,5 +9,5 @@ block content
     .button
       button(type='submit') Create Deck
   ul
-    //- for front in cards
-    //-   li= front
+    each val, index in cards
+      li= cards[index].id + ' ' + cards[index].front

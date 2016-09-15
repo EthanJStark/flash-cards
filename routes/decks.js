@@ -10,7 +10,8 @@ router.get('/decks/new', ( request, response, next ) => {
 //edit page for a specific deck
 router.get('/decks/edit/:id', ( request, response, next ) => {
   Deck.allCards( request.params.id )
-    .then( response.render('decks/edit') )
+    .then( cards => response.render('decks/edit', { cards } ) )
+  //  console.log('cards', cards)
 })
 
 //button for create a new deck. Need to insert dummy title
