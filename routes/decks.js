@@ -6,7 +6,7 @@ const Deck = require('../database/db.js').Deck
 router.get('/new', ( request, response, next ) => {
   const cards = {}
 
-  response.render('decks/edit', cards)
+  response.render('decks/edit', { cards })
 })
 
 //edit page for a specific deck
