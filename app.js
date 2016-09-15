@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
 const routes = require('./routes/index')
+const decks = require('./routes/decks')
+const cards = require('./routes/cards')
 
 const app = express()
 
@@ -22,6 +24,9 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', routes)
+app.use('/', decks)
+app.use('/', cards)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
