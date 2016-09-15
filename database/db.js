@@ -6,11 +6,17 @@ const getAllDecks = 'SELECT * FROM decks'
 
 const newDeck = 'INSERT INTO decks (title) VALUES ($1)'
 
-const Decks = {
+const newCard = 'INSERT INTO cards (front, back, deck_id) VALUES ($1, $2, $3)'
+
+const Deck = {
   all: () => db.any( getAllDecks ),
   new: title => db.one( newDeck, [title] )
 }
 
+const Card = {
+  new: (front, back, deck_id) => db.one( newCard, [front, back, deck_id] )
+}
+
 module.exports = {
-  Decks
+  Deck, Card
 }
