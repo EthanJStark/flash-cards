@@ -18,4 +18,14 @@ router.post('/new', ( request, response, next ) => {
     .then( deck_id => response.redirect( `/decks/edit/${deck_id.id}` ))
 })
 
+router.put('/edit/:id', (  request, response, next ) => {
+  const title = request.body.title
+  console.log('put route');
+  // const id = request.params.id
+  let id = 1;
+
+  Deck.editName( id, title)
+    .then( deck_id => response.redirect( `/decks/edit/1` ))
+})
+
 module.exports = router
