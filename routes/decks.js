@@ -8,8 +8,15 @@ router.get('/new', ( request, response, next ) => {
 })
 
 router.get('/edit/:id', ( request, response, next ) => {
-  Deck.allCards( request.params.id )
-    .then( cards => response.render('decks/edit', { cards } ))
+  Promise.all([
+    Deck.allCards( request.params.id ),
+    Deck.title( request.params.id )
+  ])
+    .then( result => {
+      const cards = result[0]
+      const title = result[1]
+      response.render('decks/edit', { cards, title } )
+    })
 })
 
 router.post('/new', ( request, response, next ) => {

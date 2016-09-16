@@ -12,12 +12,15 @@ const deleteCard = 'DELETE FROM cards WHERE id=$1'
 
 const listAllCardsInDeck = 'SELECT * FROM cards WHERE deck_id=$1'
 
+const getDeckTitleById = 'SELECT title FROM decks WHERE id=$1'
+
 const Deck = {
   create: title => {
     return db.one( newDeck, [title] )
   },
   allDecks: () => db.any( getAllDecks ),
-  allCards: id => db.any( listAllCardsInDeck, [id])
+  allCards: id => db.any( listAllCardsInDeck, [id] ),
+  title: id => db.one( getDeckTitleById, [id] )
 }
 
 const Card = {
