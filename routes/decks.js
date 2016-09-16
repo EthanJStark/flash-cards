@@ -9,11 +9,13 @@ router.get('/new', ( request, response, next ) => {
 
 router.get('/edit/:id', ( request, response, next ) => {
   Promise.all([
-    Deck.allCards( request.params.id )
+    Deck.allCards( request.params.id ),
+    Deck.title( request.params.id )
   ])
     .then( result => {
       const cards = result[0]
-      response.render('decks/edit', { cards } )
+      const title = result[1]
+      response.render('decks/edit', { cards, title } )
     })
 })
 
