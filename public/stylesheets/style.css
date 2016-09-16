@@ -11,6 +11,10 @@ a {
   height: 17px;
 }
 
+.deck .delete {
+  height: 17px;
+}
+
 .deck .toggle-wrapper {
   display: none;
 }
