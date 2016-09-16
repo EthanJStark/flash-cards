@@ -25,4 +25,9 @@ router.post('/new', ( request, response, next ) => {
     .then( deck_id => response.redirect( `/decks/edit/${deck_id.id}` ))
 })
 
+router.get('/delete/:id', ( request, response, next ) => {
+  Deck.delete( request.params.id )
+    .then( deck => response.redirect( '/' ))
+})
+
 module.exports = router

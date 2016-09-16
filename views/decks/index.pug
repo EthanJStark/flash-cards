@@ -16,6 +16,13 @@ block content
             .toggle-wrapper
               a(href=`/decks/edit/${deck.id}`) Edit
                 i.glyphicon.glyphicon-pencil
+          .delete
+            .toggle-wrapper
+              form(name='delete', id='delete-form', action='/decks/delete/'+deck.id, method='get')
+                input(type='submit' value='Delete Deck')
 
     if( index % 3 === 0 && index !== 0 )
       .row
+
+
+//- a(href=`/decks/delete/${deck.id}`) Delete

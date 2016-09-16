@@ -8,6 +8,9 @@ const newDeck = 'INSERT INTO decks (title) VALUES ($1) RETURNING id'
 
 const newCard = 'INSERT INTO cards (front, back, deck_id) VALUES ($1, $2, $3)'
 
+const deleteDeck = 'DELETE FROM decks WHERE id=$1'
+const deleteDeckCards = 'DELETE FROM cards WHERE deck_id=$1'
+
 const deleteCard = 'DELETE FROM cards WHERE id=$1'
 
 const listAllCardsInDeck = 'SELECT * FROM cards WHERE deck_id=$1'
@@ -20,7 +23,11 @@ const Deck = {
   },
   allDecks: () => db.any( getAllDecks ),
   allCards: id => db.any( listAllCardsInDeck, [id] ),
-  title: id => db.one( getDeckTitleById, [id] )
+  title: id => db.one( getDeckTitleById, [id] ),
+  delete: (id, deck_id) => Promise.all([
+    db.any( deleteDeck, [id] ),
+    db.any( deleteDeckCards, [deck_id] )
+  ])
 }
 
 const Card = {
