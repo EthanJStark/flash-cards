@@ -14,24 +14,24 @@ Creating this web application provided us exposure to:
 
 # Specifications
 
-- [X] User can create decks of flashcards
-- [X] User can view all decks
-- [] User can select a deck for quizzing
-- [X] User can select a deck for editing
-- [] User can edit the deck name
-- [X] User can add cards to a deck
-- [] User can delete cards
-- [] User can delete decks
-- [] User can edit cards
-- [] User can view previous card with click or keyboard, if it exists
-- [] User can view next with click or keyboard, if it exists
-- [] User can finish the quiz at anytime
-- [] User presented with summary when finishing quiz
-- [] User can view back of card with click or keyboard
-- 
+- [x] User can create decks of flashcards
+- [x] User can view all decks
+- [ ] User can select a deck for quizzing
+- [x] User can select a deck for editing
+- [ ] User can edit the deck name
+- [x] User can add cards to a deck
+- [ ] User can delete cards
+- [ ] User can delete decks
+- [ ] User can edit cards
+- [ ] User can view previous card with click or keyboard, if it exists
+- [ ] User can view next with click or keyboard, if it exists
+- [ ] User can finish the quiz at anytime
+- [ ] User presented with summary when finishing quiz
+- [ ] User can view back of card with click or keyboard
+
 # Required
 
-- [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
+- [x] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 # Quality Rubric
 
