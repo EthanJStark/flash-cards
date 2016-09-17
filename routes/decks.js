@@ -5,7 +5,7 @@ const Deck = require('../database/db.js').Deck
 // render new deck form
 router.get('/create', ( request, response, next ) => {
   const cards = {}
-  response.render('deck/create', { cards })
+  response.render('deck/createdeck', { cards })
 })
 
 // edit deck
