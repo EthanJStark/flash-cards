@@ -31,7 +31,7 @@ const Deck = {
 }
 
 const Card = {
-  create: (front, back, id) => db.one( newCard, [front, back, id] ),
+  create: (front, back, deck_id) => db.one( newCard, [front, back, deck_id] ),
   delete: id => db.none( deleteCard, [id] )
 }
 
