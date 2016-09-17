@@ -6,23 +6,36 @@ block content
       .row
 
     .col-md-4
-      .panel.panel-default.deck(data-id=deck.id)
-        .panel-heading
-          h3.panel-title= deck.title
-        .panel-body
-          | 3 cards
-        .panel-footer
-          .edit
-            .toggle-wrapper
-              a(href=`/decks/edit/${deck.id}`) Edit
-                i.glyphicon.glyphicon-pencil
-          .delete
-            .toggle-wrapper
-              form(name='delete', id='delete-form', action='/decks/delete/'+deck.id, method='get')
-                input(type='submit' value='Delete Deck')
+        .panel.panel-default.deck(data-id=deck.id)
+          .panel-heading
+            h3.panel-title= deck.title
+          .panel-body
+            a.btn.btn-default.btn-group-justified(href=`/decks/edit/${deck.id}`) Edit Deck
+              i.glyphicon.glyphicon-pencil
+            form.btn.btn-default.btn-group-justified(name='delete', action='/decks/delete/'+deck.id, method='get')
+              input(type='submit' value='Delete Deck' style="border: none; background: none; padding: 0;")
+              i.glyphicon.glyphicon-ban-circle
+
+          .panel-footer
+            .edit
+              .toggle-wrapper
+                a.btn.btn-default.btn-group-justified(href=`/decks/edit/${deck.id}`) Edit Deck
+                  i.glyphicon.glyphicon-pencil
+                form.btn.btn-default.btn-group-justified(name='delete', action='/decks/delete/'+deck.id, method='get')
+                  input(type='submit' value='Delete Deck' style="border: none; background: none; padding: 0;")
+                  i.glyphicon.glyphicon-ban-circle
+
 
     if( index % 3 === 0 && index !== 0 )
       .row
 
 
-//- a(href=`/decks/delete/${deck.id}`) Delete
+  //-       .panel-footer
+  //- .edit
+  //-   .toggle-wrapper
+  //-     a(href=`/decks/edit/${deck.id}`) Edit
+  //-       i.glyphicon.glyphicon-pencil
+  //- .delete
+  //-   .toggle-wrapper
+  //-     form(name='delete', id='delete-form', action='/decks/delete/'+deck.id, method='get')
+  //-       input(type='submit' value='Delete Deck')

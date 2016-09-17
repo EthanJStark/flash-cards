@@ -69,7 +69,7 @@
 
 	  return {
 	    timeout: function timeout(id, fn) {
-	      var time = arguments.length <= 2 || arguments[2] === undefined ? 2000 : arguments[2];
+	      var time = arguments.length <= 2 || arguments[2] === undefined ? 1500 : arguments[2];
 	      return ids[id] = window.setTimeout(fn, time);
 	    },
 	    cancel: function cancel(id) {
