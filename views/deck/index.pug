@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  each deck, index in decks
+    if( index % 3 === 0 && index !== 0 )
+      .row
+
+    .col-md-4
+      .panel.panel-info.deck(data-id=deck.id)
+        .panel-heading
+          i.glyphicon.glyphicon-education
+          h3.panel-title= deck.title
+        .panel-body
+          //-Show card count here
+          //-Perhaps using Deck.Count(deck.id)
+
+        .panel-footer
+          .edit
+            .toggle-wrapper
+              a.btn.btn-default.btn-group-justified(href=`/deck/edit/${deck.id}`) Edit Deck
+                i.glyphicon.glyphicon-wrench
+              form.btn.btn-default.btn-group-justified(name='delete', action='/deck/delete/'+deck.id, method='get')
+                input(type='submit' value='Delete Deck' style="border: none; background: none; padding: 0;")
+                i.glyphicon.glyphicon-ban-circle
+
+
+    if( index % 3 === 0 && index !== 0 )
+      .row
+
+
+  //-       .panel-footer
+  //- .edit
+  //-   .toggle-wrapper
+  //-     a(href=`/deck/edit/${deck.id}`) Edit
+  //-       i.glyphicon.glyphicon-pencil
+  //- .delete
+  //-   .toggle-wrapper
+  //-     form(name='delete', id='delete-form', action='/deck/delete/'+deck.id, method='get')
+  //-       input(type='submit' value='Delete Deck')

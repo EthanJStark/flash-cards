@@ -42,4 +42,3 @@ Array.from( document.getElementsByClassName( 'deck' ) )
 
 Array.from( document.getElementsByClassName( 'deck' ) )
   .forEach( element => element.addEventListener( 'mouseover', deckMouseover ))
-

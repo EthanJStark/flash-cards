@@ -7,11 +7,21 @@ body {
 }
 
 .deck .edit {
-  height: 17px;
+  height: 70px;
 }
 
-.deck .delete {
-  height: 17px;
+.panel-heading {
+  background-color: black;
+  border: none;
+}
+
+.panel-footer {
+  background-color: white;
+  border: none;
+}
+
+.navbar {
+  background-color: lightblue;
 }
 
 .btn i {
