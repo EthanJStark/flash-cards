@@ -61,7 +61,7 @@
 	var deckClicked = function deckClicked(event) {
 	  var id = findParentId(event.target);
 
-	  window.location = '/deck/' + id;
+	  window.location = '/decks/edit/' + id;
 	};
 
 	var timer = function () {

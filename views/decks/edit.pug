@@ -1,13 +1,8 @@
 extends ../layout
 
 block content
-  h1 Edit / Create Deck Page
-  form(action='/decks/new', method='post')
-    div
-      label(for='title') Title:
-      input#title(type='text', name='title')
-    .button
-      button(type='submit') Create Deck
+  h1=title.title
+  
   ul
     each val, index in cards
       li= cards[index].id + ' ' + cards[index].front
