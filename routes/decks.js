@@ -5,7 +5,7 @@ const Deck = require('../database/db.js').Deck
 // render new deck form
 router.get('/create', ( request, response, next ) => {
   const cards = {}
-  response.render('decks/create', { cards })
+  response.render('deck/create', { cards })
 })
 
 // edit deck
@@ -17,7 +17,7 @@ router.get('/edit/:id', ( request, response, next ) => {
     .then( result => {
       const cards = result[0]
       const title = result[1]
-      response.render('decks/edit', { cards, title } )
+      response.render('deck/edit', { cards, title } )
     })
 })
 
@@ -25,7 +25,7 @@ router.get('/edit/:id', ( request, response, next ) => {
 router.post('/new', ( request, response, next ) => {
   const title = request.body.title
   Deck.create( title )
-    .then( deck_id => response.redirect( `/decks/edit/${deck_id.id}` ))
+    .then( deck_id => response.redirect( `/deck/edit/${deck_id.id}` ))
 })
 
 // delete deck
@@ -41,7 +41,7 @@ router.get('/:id/new', ( request, response, next ) => {
 
 //button for saving a new card
 //deck/edit/:deckid/card/create
-// (`/decks/${id}/new
+// (`/deck/${id}/new
 
 // create card
 router.post('/:id/newCard', ( request, response, next ) => {
@@ -51,7 +51,7 @@ router.post('/:id/newCard', ( request, response, next ) => {
   // console.log('deckid', deck_id)
 
   Card.create( front, back, deck_id )
-    .then( x => response.redirect( `/decks/edit/${deck_id.id}` ))
+    .then( x => response.redirect( `/deck/edit/${deck_id.id}` ))
 })
 
 

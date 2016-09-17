@@ -4,7 +4,7 @@ const Deck = require('../database/db.js').Deck
 
 router.get('/', function(request, response, next) {
   Deck.allDecks()
-    .then( decks => response.render('decks/index', { decks } ) )
+    .then( decks => response.render('deck/index', { decks } ) )
 })
 
 module.exports = router
