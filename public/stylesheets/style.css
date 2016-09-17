@@ -10,9 +10,18 @@ body {
   height: 70px;
 }
 
+.panel-heading {
+  background-color: black;
+  border: none;
+}
+
 .panel-footer {
   background-color: white;
   border: none;
+}
+
+.navbar {
+  background-color: lightblue;
 }
 
 .btn i {

@@ -1,13 +1,14 @@
 extends ../layout
 
 block content
-  h1 Create New Deck
-  form(action='/deck/new', method='post')
-    div
-      label(for='title') Title:
-      input#title(type='text', name='title')
-    .button
-      button(type='submit') Create Deck
-  ul
-    each val, index in cards
-      li= cards[index].id + ' ' + cards[index].front
+  .row
+    .col-lg-12
+      form(action='/deck/new', method='post')
+        .input-group
+          input.form-control(type='text', name='title', placeholder='Enter New Deck Name')
+          span.input-group-btn
+            button.btn.btn-default(type='submit') Create!
+
+      ul
+        each val, index in cards
+          li= cards[index].id + ' ' + cards[index].front
