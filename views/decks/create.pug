@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   h1 Create New Deck
-  form(action='/decks/new', method='post')
+  form(action='/deck/new', method='post')
     div
       label(for='title') Title:
       input#title(type='text', name='title')

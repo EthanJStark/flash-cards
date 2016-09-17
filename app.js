@@ -24,8 +24,8 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', routes)
-app.use('/decks', decks)
-app.use('/cards', cards)
+app.use('/deck', decks)
+app.use('/card', cards)
 
 
 // catch 404 and forward to error handler
