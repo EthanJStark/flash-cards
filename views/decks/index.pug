@@ -10,11 +10,12 @@ block content
           .panel-heading
             h3.panel-title= deck.title
           .panel-body
-            a.btn.btn-default.btn-group-justified(href=`/decks/edit/${deck.id}`) Edit Deck
-              i.glyphicon.glyphicon-pencil
-            form.btn.btn-default.btn-group-justified(name='delete', action='/decks/delete/'+deck.id, method='get')
-              input(type='submit' value='Delete Deck' style="border: none; background: none; padding: 0;")
-              i.glyphicon.glyphicon-ban-circle
+            
+            //- a.btn.btn-default.btn-group-justified(href=`/decks/edit/${deck.id}`) Edit Deck
+            //-   i.glyphicon.glyphicon-pencil
+            //- form.btn.btn-default.btn-group-justified(name='delete', action='/decks/delete/'+deck.id, method='get')
+            //-   input(type='submit' value='Delete Deck' style="border: none; background: none; padding: 0;")
+            //-   i.glyphicon.glyphicon-ban-circle
 
           .panel-footer
             .edit
