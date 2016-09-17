@@ -1,18 +1,20 @@
 extends ../layout
 
 block content
-  h1=title.title
-  h4 Create New Card:
+  h3=`Create new card about ${title.title}:`
   .row
     .col-lg-12
       form(action='/deck/new', method='post')
         .input-group
-          span#basic-addon1.input-group-addon Front:
-          input.form-control(type='text', aria-describedby='basic-addon1')
-          span#basic-addon1.input-group-addon Back:
-          input.form-control(type='text', aria-describedby='basic-addon1')
+          span#basic-addon1.input-group-addon Term:
+          input.form-control(type='text', placeholder="term to study", aria-describedby='basic-addon1')
+          span#basic-addon1.input-group-addon Definition:
+          input.form-control(type='text', placeholder="definition of term", aria-describedby='basic-addon1')
           span.input-group-btn
             button.btn.btn-default(type='submit') Create!
+
+
+//- /*form(action=`/deck/edit/${deck.id}card/new`, method='post')*/
 
 
   ul

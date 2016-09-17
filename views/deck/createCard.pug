@@ -2,4 +2,15 @@
 Needs to follow Route:
   deck/:id/card/create
   then have a button to save and go back
-    also have a button to create card 
+    also have a button to create card
+
+    .col-lg-12.deck(data-id=deck.id)
+      //Needs to post to database and update with new card front and back when created on edit deck page or on separate view for create card
+      form(action='/deck/edit/'+deck.id, method='post')
+        .input-group
+          span#basic-addon1.input-group-addon Term:
+          input.form-control(type='text', placeholder="term to study", aria-describedby='basic-addon1')
+          span#basic-addon1.input-group-addon Definition:
+          input.form-control(type='text', placeholder="definition of term", aria-describedby='basic-addon1')
+          span.input-group-btn
+            button.btn.btn-default(type='submit') Create!
