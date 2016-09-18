@@ -27,10 +27,14 @@ const Deck = {
   allCards: id => db.any( listAllCardsInDeck, [id] ),
   title: id => db.one( getDeckTitleById, [id] ),
   count: id => db.one( getCardCountById, [id]),
-  delete: (id, deck_id) => db.tx(t=>t.batch([
-    t.any( deleteDeck, id ),
-    t.any( deleteDeckCards, deck_id )
-  ]))  
+  // delete: (id, deck_id) => db.tx(t=>t.batch([
+  //   t.any( deleteDeck, [id] ),
+  //   t.any( deleteDeckCards, [deck_id] )
+  // ]))
+  delete: (id) => Promise.all([
+   db.any( deleteDeck, [id] ),
+   db.any( deleteDeckCards, [id] )
+ ])
 }
 
 const Card = {
