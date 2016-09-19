@@ -1,7 +1,6 @@
-body {
-  padding-top: 70px;
+.navbar {
+  background-color: lightblue;
 }
-
 .deck .toggle-wrapper {
   display: none;
 }
@@ -15,15 +14,23 @@ body {
   border: none;
 }
 
+.panel-body {
+  padding-bottom: 0;
+}
+
 .panel-footer {
   background-color: white;
   border: none;
 }
 
-.navbar {
-  background-color: lightblue;
+.show-cards {
+  padding-top: 10px;
 }
 
 .btn i {
   padding-left: 3px;
 }
+
+/*body {
+  padding-top: 70px;
+}*/

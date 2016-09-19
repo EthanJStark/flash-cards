@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h4 Study Time
+  ul
+    each val, index in cards
+      .col-md-4
+        .panel.panel-info.deck(data-id=cards[index].id)
+          .panel-heading
+            i.glyphicon.glyphicon-education
+            h3.panel-title=cards[index].front
+          .panel-body
+            h4=cards[index].back

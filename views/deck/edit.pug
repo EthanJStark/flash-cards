@@ -1,17 +1,44 @@
 extends ../layout
 
 block content
-  h3=`Create new card about ${title.title}:`
+  h3=`Create new card for Deck ${title.title}:`
   .row
     .col-lg-12
-      form(action='/deck/new', method='post')
+      form(action=`/deck/edit/${cards[0].deck_id}/newCard`, method='post')
         .input-group
-          span#basic-addon1.input-group-addon Term:
-          input.form-control(type='text', placeholder="term to study", aria-describedby='basic-addon1')
-          span#basic-addon1.input-group-addon Definition:
-          input.form-control(type='text', placeholder="definition of term", aria-describedby='basic-addon1')
+          span#front.input-group-addon Front:
+          input.form-control(type='text', placeholder="term to study", aria-describedby='front', name='front')
+          span#back.input-group-addon Back:
+          input.form-control(type='text', placeholder="definition of term", aria-describedby='back', name='back')
           span.input-group-btn
-            button.btn.btn-default(type='submit') Create!
+            button.btn.btn-default(type='submit') Create New Card!
+  h3='All Cards in this deck: '
+    //- My way to get the id of the deck from the cards passed to this page but causes issue when there are no cards associated with deck ${cards[0].deck_id}
+    //- form(action=`/deck/${cards[0].deck_id}/newCard`, method='post')
+    //-   div
+    //-     label(for='front') Front:
+    //-     input#title(type='text', name='front')
+    //-   div
+    //-     label(for='back') Back:
+    //-     input#title(type='text', name='back')
+    //-   .button
+    //-     button(type='submit') Create Card
+    //- ul
+    //-   each val, index in cards
+    //-     li= 'Front of card: ' + cards[index].id + ' ' + cards[index].front
+    //-     li= ' Back of card: ' + cards[index].id + ' ' + cards[index].back
+    .show-cards
+      ul
+        each val, index in cards
+          if( index % 3 === 0 && index !== 0 )
+            .row
+          .col-md-4
+            .panel.panel-info.deck(data-id=cards[index].id)
+              .panel-heading
+                i.glyphicon.glyphicon-education
+                h3.panel-title=cards[index].front
+              .panel-body
+                h4=cards[index].back
 
 
 //- /*form(action=`/deck/edit/${deck.id}card/new`, method='post')*/

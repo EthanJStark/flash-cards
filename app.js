@@ -6,8 +6,8 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
 const routes = require('./routes/index')
-const decks = require('./routes/decks')
-const cards = require('./routes/cards')
+const decks = require('./routes/deck')
+const cards = require('./routes/card')
 
 const app = express()
 
