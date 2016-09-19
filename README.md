@@ -16,12 +16,12 @@ Creating this web application provided us exposure to:
 
 - [x] User can create decks of flashcards
 - [x] User can view all decks
-- [ ] User can select a deck for quizzing
+- [x] User can select a deck for quizzing
 - [x] User can select a deck for editing
 - [ ] User can edit the deck name
 - [x] User can add cards to a deck
-- [ ] User can delete cards
-- [ ] User can delete decks
+- [x] User can delete cards
+- [x] User can delete decks
 - [ ] User can edit cards
 - [ ] User can view previous card with click or keyboard, if it exists
 - [ ] User can view next with click or keyboard, if it exists
